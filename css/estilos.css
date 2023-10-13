@@ -1,0 +1,543 @@
+
+/* TODO VARIABLES */
+:root {
+    /* * Estilos de los textos */
+    --titulo: clamp(22px, 3.355vw, 30px);
+    --texto: clamp(15px, 2.129vw, 18px);
+
+    /* * Estilos de Colores */
+    --colorPrimario: #5468FF;
+    --sombra: #9F9F9F;
+
+    --negro: #1a1a1a;
+    --plomo: #4F4E4E;
+    --gris: #D8D8D8;
+    --blanco: #f8f8f8;
+}
+
+/* TODO ESTILOS GENERALES */
+* {
+    font-family: 'Roboto', sans-serif;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+
+body {
+    font-size: var(--texto);
+    font-weight: 400;
+    color: var(--negro);
+}
+
+h2 {
+    font-size: var(--titulo);
+    text-align: center;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ! --------------------------------------------------------------------------------------------------------------------------------------------
+!                                                              SECCION LOGIN
+! --------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* ?  --------------------------------------------------------- VERSION PC -------------------------------------------------------------------- */
+
+.body {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    height: 100vh;
+}
+
+.body-opcion {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+}
+
+
+/* ! --------------------------------------------------------------------------------------------------------------------------------------------
+!                                                              SECCION HEADER
+! --------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* ?  --------------------------------------------------------- VERSION PC -------------------------------------------------------------------- */
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 0 -2px 7px var(--sombra);
+    height: 78px;
+}
+
+.header__seccion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.header__seccion-activo {
+    color: var(--colorPrimario);
+    font-weight: 500;
+}
+
+/* */
+
+.header__seccion-activo .header__icono {
+    display: none;
+}
+
+/* */
+
+.header__icono-activo {
+    display: none;
+}
+.header__seccion-activo .header__icono-activo {
+    display: block;
+}
+
+
+
+
+/* ! --------------------------------------------------------------------------------------------------------------------------------------------
+!                                                              SECCION MAIN
+! --------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* ?  --------------------------------------------------------- VERSION PC -------------------------------------------------------------------- */
+
+.main {
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.main__seccion {
+    overflow-y: auto;
+    margin: clamp(15px, 2.581vw, 25px) 0;
+    padding: 0 25px;
+}
+
+.slider {
+    display: flex;
+    width: 200%;
+    transition: 0.8s;
+}
+
+.slider__seccion {
+    width: 100%;
+    padding: 25px;
+}
+
+/* * Tablas */
+
+.tabla1 {
+    display: grid;
+}
+
+.tabla2 {
+    display: none;
+}
+.tabla3 {
+    display: none;
+}
+
+.tabla__encabezado {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    font-weight: 600;
+    background-color: var(--colorPrimario);
+    color: var(--blanco);
+    padding: 8px 10px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.tabla__contenido {
+    border: 2px solid var(--colorPrimario);
+    border-radius: 0 0 5px 5px;
+}
+
+.tabla__fila {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: 5px 10px;
+}
+
+.tabla__fila:nth-child(even) {
+    background-color: #d9ddfd;
+}
+
+.tabla__boton {
+    background-color: var(--colorPrimario);
+    color: var(--blanco);
+    font-weight: 600;
+    padding: 7px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 2px 2px 8px var(--sombra);
+}
+
+
+
+/* ! --------------------------------------------------------------------------------------------------------------------------------------------
+!                                                              SECCION CIRCULO
+! --------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* ?  --------------------------------------------------------- VERSION PC -------------------------------------------------------------------- */
+
+.circulo {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--colorPrimario);
+    border-radius: 50%;
+    color: var(--blanco);
+    font-size: 25px;
+    position: absolute;
+    right: 22px;
+    bottom: 100px;
+    z-index: 3;
+    box-shadow: 2px 2px 5px #2B2B2B;
+    cursor: pointer;
+}
+
+.circulo__icono {
+    transition: 0.8s;
+}
+
+.circulo-activo .circulo__icono {
+    transform: rotate(45deg);
+}
+
+
+/* ! --------------------------------------------------------------------------------------------------------------------------------------------
+!                                                              SECCION OPCIONES
+! --------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* ?  --------------------------------------------------------- VERSION PC -------------------------------------------------------------------- */
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+    display: none;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.menu__contenido {
+    position: absolute;
+    right: 32px;
+    bottom: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.menu__opcion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.menu__texto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu__texto-activo {
+    color: var(--colorPrimario);
+}
+
+.menu__icono {
+    width: 33px;
+    height: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px #C7C7C7;
+}
+
+
+/* media: 600px */
+
+
+/* 
+
+*/
+
+.header-titulo {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 15px;
+    padding: clamp(18px, 2.774vw, 25px) clamp(25px, 3.548vw, 30px);
+    color: var(--colorPrimario);
+}
+
+.header__a {
+    padding: 2px 5px;
+}
+
+.flecha {
+    font-size: clamp(20px, 2.903vw, 25px);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(30px, 4.839vw, 45px);
+    width: 100%;
+    max-width: 600px;
+}
+
+.form__label {
+    font-weight: 600;
+}
+
+.form__input {
+    border-radius: 10px;
+    padding: 8px 10px;
+    border: 2px solid var(--negro);
+}
+
+.form__campo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form__boton {
+    border-radius: 10px;
+    padding: 12px;
+    background-color: var(--colorPrimario);
+    font-weight: 700;
+    border: none;
+    color: var(--blanco);
+    cursor: pointer;
+}
+
+.form__select {
+    padding: 8px 10px;
+    border-radius: 10px;
+}
+
+.form__option {
+    padding: 8px 10px;
+}
+
+.form__option:hover {
+    background: var(--colorPrimario);
+}
+
+
+/* COMBOBOX */
+
+.form__combobox {
+    position: relative;
+}
+.form__combobox-contenedor {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid var(--negro);
+    padding: 8px 10px;
+    border-radius: 10px;
+}
+
+.form__combobox-disabled {
+    border: 2px solid var(--gris);
+    color: var(--gris);
+    cursor: default;
+}
+.form__combobox-disabled .form__combobox-input {
+    cursor: default;
+}
+
+.form__combobox-input {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.form__combobox-input:focus {
+    outline: none;
+}
+.form__combobox-input::placeholder {
+    color: var(--negro);
+}
+.form__combobox-disabled .form__combobox-input::placeholder {
+    color: var(--gris);
+}
+
+/* opciones */
+
+.form__combobox-opciones {
+    background-color: var(--blanco);
+    border: 2px solid var(--gris);
+    border-radius: 10px;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    box-shadow: 0 0 8px var(--gris);
+    margin-top: 10px;
+    max-height: 145px;
+    overflow-y: auto;
+    opacity: 0;
+    transition: 0.3s;
+    display: none;
+}
+
+.form__combobox-opcion {
+    padding: 8px 10px;
+    cursor: default;
+    display: inline-block;
+    width: 100%;
+}
+
+.form__combobox-opcion:hover {
+    background-color: var(--gris);
+}
+
+
+
+/* ! --------------------------------------------------------------------------------------------------------------------------------------------
+!                                                              SECCION BARRA LATERAL
+! --------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* ?  --------------------------------------------------------- VERSION PC -------------------------------------------------------------------- */
+.barraLateral {
+    display: none;
+    flex-direction: column;
+    background-color: #F7F9FC;
+    padding: 30px 15px;
+    gap: 20px;
+}
+
+.barraLateral__mas {
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #C7C7C7;
+    display: flex;
+    gap: 10px;
+    padding: 10px 15px;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.barraLateral__nav {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 15px;
+}
+
+.barraLateral__li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 20px;
+    padding: 3px 15px;
+    cursor: pointer;
+}
+
+.barraLateral__li-activo {
+    background-color: var(--colorPrimario);
+    color: var(--blanco);
+    font-weight: 500;
+}
+
+.header__icono-activo {
+    display: none;
+}
+
+.barraLateral__li-activo .header__icono {
+    display: none;
+}
+
+.barraLateral__li-activo .header__icono-activo {
+    display: inline-block;
+}
+
+
+/* menu */
+
+.menuDesktop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+    opacity: 0;
+    display: none;
+    transition: 0.3s;
+    color: var(--negro);
+}
+
+.menuDesktop__contenido {
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #a3a3a3;
+    gap: 5px;
+    width: 245px;
+    padding: 15px 0;
+    align-items: start;
+    top: 30px;
+    left: 15px;
+    right: auto;
+    bottom: auto;
+    background-color: var(--blanco);
+}
+
+.menuDesktop__opcion {
+    padding: 2px;
+    padding-left: 15px;
+    width: 100%;
+    justify-content: start;
+}
+
+.menuDesktop__opcion:hover {
+    background-color: #E4E4E4;
+}
+
+@media screen and (min-width: 600px) {
+    .circulo {
+        display: none;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .barraLateral {
+        display: flex;
+    }
+
+    .main__seccion {
+        padding: 20px 25px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .body {
+        display: grid;
+        grid-template-columns: 270px 1fr;
+    }
+}
